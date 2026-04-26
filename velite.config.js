@@ -41,7 +41,8 @@ const blog = s
   })
 
   const isProd = process.env.NODE_ENV === 'production';
-const pathPrefix = isProd ? '/sunmadeph' : '';
+  //const pathPrefix = isProd ? '/sunmadeph' : '';
+  const pathPrefix = '/sunmadeph';
 
 export default defineConfig({
   root: 'content',
