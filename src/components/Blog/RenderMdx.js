@@ -8,8 +8,9 @@ const mdxComponents = {
   // This intercepts the <Image /> tag used inside your .mdx files
   Image: (props) => {
     // If the src starts with "./", we redirect it to the public/blogs folder with the prefix
+
     const optimizedSrc = props.src.startsWith('./') 
-      ? `${prefix}/blogs/${props.src.replace('./', '')}` 
+      ? `/sunmadeph/blogs/${props.src.replace('./', '')}` 
       : props.src;
 
     return (
