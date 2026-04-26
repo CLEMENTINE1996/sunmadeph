@@ -5,7 +5,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
-import { prefix } from "@/src/utils";
 
 const codeOptions = {
   theme: 'github-dark',
@@ -41,6 +40,9 @@ const blog = s
     }
   })
 
+  const isProd = process.env.NODE_ENV === 'production';
+const pathPrefix = isProd ? '/sunmadeph' : '';
+
 export default defineConfig({
   root: 'content',
   collections: {
@@ -53,7 +55,7 @@ export default defineConfig({
   output: {
     data: '.velite/generated',
     assets: 'public/blogs',
-    base: `${prefix}/blogs/`,
+    base: `${pathPrefix}/blogs/`,
     clean: true,
   },
   // Add MDX plugins

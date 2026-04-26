@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
+import { prefix } from "@/src/utils";
 
 const mockData = [
   { 
@@ -75,7 +76,7 @@ const VideoPlayer = () => {
                 }}
               >
                 {el.type === 'IMAGE' ? (
-                  <img src={el.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={`${prefix}${el.src}`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 ) : (
                   <div style={{ background: '#18181b', color: 'white', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 'bold' }}>
                     VIDEO
@@ -88,9 +89,9 @@ const VideoPlayer = () => {
           {mockData.map((el, i) => (
             <article key={i} className="relative w-full pb-2"> {/* pb-14 gives room for thumbnails */}
               {el.type === 'IMAGE' ? (
-                <img src={el.src} alt={`Slide ${i}`} className="w-full rounded-lg h-auto object-cover" />
+                <img src={`${prefix}${el.src}`} alt={`Slide ${i}`} className="w-full rounded-lg h-auto object-cover" />
               ) : (
-                <VideoSlide url={el.src} isPlaying={activeIndex === i} />
+                <VideoSlide url={`${prefix}${el.src}`} isPlaying={activeIndex === i} />
               )}
             </article>
           ))}
