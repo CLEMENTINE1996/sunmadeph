@@ -15,5 +15,4 @@ export const sortBlogs = (blogs) => {
     });
 };
 
-//export const prefix = process.env.NODE_ENV === 'production' ? '/sunmadeph' : '';
-export const prefix = '/sunmadeph';
+export const prefix = process.env.NODE_ENV === 'production' ? '/sunmadeph' : '';
