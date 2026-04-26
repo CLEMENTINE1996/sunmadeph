@@ -5,20 +5,18 @@ import Image from "next/image" // Import Next.js Image
 import { prefix } from "@/src/utils" // Import your prefix utility
 
 const mdxComponents = {
-  // This intercepts the <Image /> tag used inside your .mdx files
   Image: (props) => {
-    // If the src starts with "./", we redirect it to the public/blogs folder with the prefix
-
-    const optimizedSrc = props.src.startsWith('./') 
+    // We are manually forcing the sunmadeph path here to bypass any variable issues
+    const src = props.src.startsWith('./') 
       ? `/sunmadeph/blogs/${props.src.replace('./', '')}` 
       : props.src;
 
     return (
-      <Image 
+      <img 
         {...props} 
-        src={optimizedSrc} 
-        unoptimized={true} // Required for GitHub Pages static export
-        className={`w-full h-auto rounded-xl ${props.className || ""}`}
+        src={src} 
+        className="w-full h-auto rounded-xl" 
+        alt={props.alt || "SunMade Rice"} 
       />
     );
   }

@@ -9,7 +9,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "next lint .",
     "content": "velite --clean",
     "content:watch": "velite --watch"
   },
