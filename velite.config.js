@@ -34,7 +34,7 @@ const blog = s
   .transform(data => {
     return {
       ...data,
-      url: `${pathPrefix}/blogs/${data.slug}`,
+      url: `/blogs/${data.slug}`,
       readingTime: readingTime(data.body),
     //   toc: headings,
       /*image: {
