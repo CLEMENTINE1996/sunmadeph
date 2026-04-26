@@ -6,6 +6,10 @@ import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
 
+const isProd = process.env.NODE_ENV === 'production';
+  //const pathPrefix = isProd ? '/sunmadeph' : '';
+const pathPrefix = '/sunmadeph';
+
 const codeOptions = {
   theme: 'github-dark',
   grid: false,
@@ -30,7 +34,7 @@ const blog = s
   .transform(data => {
     return {
       ...data,
-      url: `${prefix}/blogs/${data.slug}`,
+      url: `${pathPrefix}/blogs/${data.slug}`,
       readingTime: readingTime(data.body),
     //   toc: headings,
       /*image: {
@@ -39,10 +43,6 @@ const blog = s
       },*/
     }
   })
-
-  const isProd = process.env.NODE_ENV === 'production';
-  //const pathPrefix = isProd ? '/sunmadeph' : '';
-  const pathPrefix = '/sunmadeph';
 
 export default defineConfig({
   root: 'content',
