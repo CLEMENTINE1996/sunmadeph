@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { prefix } from "@/src/utils";
 
 const ProductLayout = ({ product, onClick }) => {
   return (
@@ -9,7 +10,7 @@ const ProductLayout = ({ product, onClick }) => {
     >
       <div className="w-full h-full rounded-xl overflow-hidden bg-gray/10">
         <Image
-          src={product.images[0]}
+          src={`${prefix}${product.images[0]}`}
           alt={product.name}
           width={400}
           height={300}

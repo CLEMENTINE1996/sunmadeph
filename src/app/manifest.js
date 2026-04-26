@@ -5,7 +5,7 @@ export default function manifest() {
       name: 'SunmadePH App',
       short_name: 'SunmadePH',
       description: 'SunmadePH App',
-      start_url: '/sunmadeph',
+      start_url: '/sunmadeph/',
       display: 'standalone',
     //   background_color: '#fff',
     //   theme_color: '#fff',

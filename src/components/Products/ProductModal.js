@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { prefix } from "@/src/utils";
 
 const ProductModal = ({ product, closeModal }) => {
   return (
@@ -19,7 +20,7 @@ const ProductModal = ({ product, closeModal }) => {
             {product.images.map((img, index) => (
               <div key={index} className="rounded-xl overflow-hidden">
                 <Image 
-                  src={img} 
+                  src={`${prefix}${img}`}
                   alt={`${product.name} ${index}`} 
                   width={500} 
                   height={500} 

@@ -14,3 +14,5 @@ export const sortBlogs = (blogs) => {
       return compareDesc(parseISO(a.publishedAt), parseISO(b.publishedAt));
     });
 };
+
+export const prefix = process.env.NODE_ENV === 'production' ? '/sunmadeph' : '';

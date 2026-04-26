@@ -5,6 +5,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkGfm from "remark-gfm"
+import { prefix } from "@/src/utils";
 
 const codeOptions = {
   theme: 'github-dark',
@@ -30,7 +31,7 @@ const blog = s
   .transform(data => {
     return {
       ...data,
-      url: `/blogs/${data.slug}`,
+      url: `${prefix}/blogs/${data.slug}`,
       readingTime: readingTime(data.body),
     //   toc: headings,
       /*image: {
@@ -52,7 +53,7 @@ export default defineConfig({
   output: {
     data: '.velite/generated',
     assets: 'public/blogs',
-    base: '/blogs/',
+    base: `${prefix}/blogs/`,
     clean: true,
   },
   // Add MDX plugins
