@@ -27,7 +27,7 @@ jobs:
         run: echo '${{ secrets.SUNMADE_SECRET }}' > service-account.json
 
       - name: Run Sync Script
-        run: node sync-drive.js # This is the script we wrote earlier
+        run: node sync-drive.js 
 
       - name: Commit and Push changes
         run: |
@@ -37,5 +37,7 @@ jobs:
           git commit -m "Auto-sync: New blog posts from Google Drive" || echo "No changes to commit"
           git push
 
-      - name: Deploy to Production
-        run: npm run build # Or your specific deployment command
+      - name: Force Velite and Build
+        run: |
+          npx velite build
+          npm run build
