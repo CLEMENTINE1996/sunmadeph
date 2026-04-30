@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Needed to "push" the new blog files to your repo
+      pages: write      # Added for deployment
+      id-token: write
     
     steps:
       - name: Checkout Code
@@ -39,5 +41,14 @@ jobs:
 
       - name: Force Velite and Build
         run: |
-          npx velite build
+          npx velite --clean
           npm run build
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out # This must match your Next.js export directory
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
