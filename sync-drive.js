@@ -61,7 +61,7 @@ async function downloadFolder(drive, folderId, localPath) {
 
 async function startSync() {
   const auth = new google.auth.GoogleAuth({
-    keyFile: KEY_FILE,
+    keyFile: path.join(process.cwd(), 'service-account.json'),
     scopes: ['https://www.googleapis.com/auth/drive.readonly'],
   });
   const drive = google.drive({ version: 'v3', auth });
