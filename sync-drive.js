@@ -37,7 +37,22 @@ async function downloadFolder(drive, folderId, localPath) {
       }
       
       console.log(`Syncing Products Data: ${file.name}`);
-      await downloadFolder(drive, file.id, dataFilePath);
+      
+      // Use the file download logic here, NOT downloadFolder
+      const dest = fs.createWriteStream(dataFilePath);
+      const response = await drive.files.get(
+        { fileId: file.id, alt: 'media' },
+        { responseType: 'stream' }
+      );
+      
+      // Wrap in a Promise to ensure it finishes before moving on
+      await new Promise((resolve, reject) => {
+        response.data
+          .pipe(dest)
+          .on('finish', resolve)
+          .on('error', reject);
+      });
+      
       continue; 
     }
 

@@ -35,8 +35,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/blogs
-          git commit -m "Auto-sync: New blog posts from Google Drive" || echo "No changes to commit"
+          git add content/blogs src/data  # Added src/data here
+          git commit -m "Auto-sync: Content and Product updates" || echo "No changes"
           git push
 
       - name: Force Velite and Build
