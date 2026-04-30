@@ -30,6 +30,7 @@ const HomeCoverSection = ({blogs}) => {
                 {/* Modern "Order Now" Button treatment */}
                 <div className="hover:scale-105 transition-transform">
                     <Tag className="text-accent dark:text-accentDark" target="_blank" link="https://docs.google.com/forms/d/e/1FAIpQLSe_HJ2QjKTCqWRXs2XegM9SXTgJl3_MkyU6nF0TyRZUp_t-yQ/viewform" name="Order Now" />
+                    <Tag className="text-accent dark:text-accentDark ms-2" target="_blank" link="/products" name="Products" />
                 </div>
                 
                 <Link href={blog.url} className='mt-6 group/title'>

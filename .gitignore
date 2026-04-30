@@ -34,9 +34,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.velite
+# Content Sync & Security
+service-account.json
+.velite/
 
+# SEO & Public
 /public/robots.txt
 /public/sitemap.xml
 /public/sitemap-0.xml
-

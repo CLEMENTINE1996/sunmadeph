@@ -46,7 +46,7 @@ const Header = () => {
         </button>
 
         <nav className={cx(
-          "fixed right-1/2 translate-x-1/2 flex items-center justify-center border border-solid border-dark/20 rounded-full font-medium capitalize backdrop-blur-md z-50 transition-all duration-300 ease",
+          "fixed right-1/2 translate-x-1/2 flex items-center justify-center rounded-sm font-medium capitalize backdrop-blur-md z-50 transition-all duration-300 ease",
           "sm:top-10 sm:-translate-y-1/2 sm:py-3 sm:px-8", 
           click ? "top-20 py-4 px-6 opacity-100 visible" : "top-[-100%] py-0 px-0 opacity-0 invisible sm:visible sm:opacity-100 sm:top-10",
           mode === "light" ? "bg-white/80 text-dark" : "bg-dark/80 text-light"
