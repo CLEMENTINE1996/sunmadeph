@@ -37,7 +37,7 @@ const BranchPage = () => {
                             >
                                 <div className="flex-1">
                                     <div className="flex items-center gap-3 mb-2">
-                                        <h2 className="text-xl md:text-2xl font-bold text-accent dark:text-accentDark group-hover:text-blue-500 transition-colors"> 
+                                        <h2 className="text-xl md:text-2xl font-bold text-accent dark:text-accentDark group-hover: transition-colors"> 
                                             {branch.name}
                                         </h2>
                                     </div>
@@ -49,7 +49,7 @@ const BranchPage = () => {
                                 </div>
 
                                 <div className="mt-4 md:mt-0 flex items-center justify-between text-dark dark:text-light">
-                                    <span className="md:hidden text-xs font-bold uppercase text-blue-500">View Details</span>
+                                    <span className="md:hidden text-xs font-bold uppercase ">View Details</span>
                                     <motion.div 
 
                                         animate={{ rotate: isExpanded ? 180 : 0 }}
@@ -73,14 +73,14 @@ const BranchPage = () => {
                                         <p className="mb-6">{branch.description}</p>
 
                                          <h5 className='mb-2 text-accent dark:text-accentDark font-semibold'>Services</h5>
-                                        <ul className="list-disc list-inside space-y-2 mb-4">
+                                        <ul className=" list-inside space-y-2 mb-4">
                                             {branch.services.map((service, idx) => (
                                                 <li key={idx}>{service}</li>
                                             ))}
                                         </ul>
 
                                         <h5 className='mb-2 text-accent dark:text-accentDark font-semibold'>Staff</h5>
-                                        <ul className="list-disc list-inside space-y-1 mt-2">
+                                        <ul className=" list-inside space-y-1 mt-2">
                                             {branch?.branch_manager?.staff.map((staff, idx) => (
                                                 <li key={idx}>{staff.name} - {staff.role}</li>
                                             ))}
