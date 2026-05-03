@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
 import { prefix } from "@/src/utils";
+import { Slide } from "react-awesome-reveal";
 
 const mockData = [
   { 
@@ -35,9 +36,11 @@ const VideoSlide = ({ url, isPlaying }) => {
   }, [isPlaying]);
 
   return (
+    <Slide duration={500} fraction={0.5} triggerOnce >
     <div className="relative aspect-video w-full bg-black flex items-center justify-center rounded-lg overflow-hidden">
       <video ref={videoRef} src={url} muted playsInline controls className="w-full h-full object-contain" />
     </div>
+    </Slide>
   );
 };
 
@@ -52,7 +55,7 @@ const VideoPlayer = () => {
     <section className="w-full mt-16 sm:mt-24  md:mt-32 px-5 sm:px-10 md:px-24  sxl:px-32 flex flex-col items-center justify-center">
     <h2 className="w-full inline-block font-bold capitalize text-2xl md:text-4xl text-dark dark:text-light mb-4">Videos</h2>
 
-      <div className="w-full bg-white dark:bg-zinc-900 rounded-xl shadow-2xl p-4 border border-gray-200 dark:border-zinc-800">
+      <div className="w-full bg-white dark:bg-zinc-900 rounded-xl p-4">
         <Carousel
           showThumbs={true}
           showStatus={true}

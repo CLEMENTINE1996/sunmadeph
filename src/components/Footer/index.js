@@ -95,21 +95,7 @@ const Footer = () => {
         <span className="text-center opacity-80">
           &copy;{new Date().getFullYear()} {siteMetadata.author}. All rights reserved.
         </span>
-        
-        <div className="flex items-center gap-8 my-6 md:my-0">
-            <Link href="/" className="hover:text-white transition-colors relative group">
-                Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
-            </Link>
-            <Link href="/about" className="hover:text-white transition-colors relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
-            </Link>
-            <Link href="/contact" className="hover:text-white transition-colors relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full" />
-            </Link>
-        </div>
+      
 
         <div className="flex items-center gap-1 opacity-80">
           Made with <span className="text-red-500 animate-pulse">&hearts;</span>

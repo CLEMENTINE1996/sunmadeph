@@ -129,3 +129,5 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 .thumb.selected {
   border: 2px solid #000 !important; /* Matches your dark theme border */
 }
+
+

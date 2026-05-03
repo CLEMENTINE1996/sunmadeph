@@ -29,14 +29,15 @@ async function downloadFolder(drive, folderId, localPath) {
   if (!res.data.files.length) return;
 
   for (const file of res.data.files) {
-    if (file.name === 'products.json') {
+    const jsonFiles = ['products.json', 'careers.json', 'branches.json', 'organizational-chart.json'];
+    if (jsonFiles.includes(file.name)) {
       const dataFilePath = path.join(DATA_DIR, file.name);
       
       if (!fs.existsSync(DATA_DIR)) {
         fs.mkdirSync(DATA_DIR, { recursive: true });
       }
       
-      console.log(`Syncing Products Data: ${file.name}`);
+      console.log(`Syncing ${file.name}: ${file.name}`);
       
       // Use the file download logic here, NOT downloadFolder
       const dest = fs.createWriteStream(dataFilePath);
@@ -62,14 +63,19 @@ async function downloadFolder(drive, folderId, localPath) {
       // It's a folder, go inside it
       await downloadFolder(drive, file.id, currentLocalPath);
     } else {
-      // It's a file, download it
       const dest = fs.createWriteStream(currentLocalPath);
       const response = await drive.files.get(
         { fileId: file.id, alt: 'media' },
         { responseType: 'stream' }
       );
-      response.data.pipe(dest);
-      console.log(`Synced: ${file.name} to ${localPath}`);
+
+      await new Promise((resolve, reject) => {
+        response.data
+          .pipe(dest)
+          .on('finish', resolve)
+          .on('error', reject);
+      });
+      console.log(`Successfully downloaded: ${file.name}`);
     }
   }
 }
@@ -81,8 +87,12 @@ async function startSync() {
   });
   const drive = google.drive({ version: 'v3', auth });
 
-  console.log('Starting cleaning local folders...');
-  cleanLocalFolders(); // Ensure we start with a clean slate before syncing
+  if (process.env.GITHUB_ACTIONS !== 'true') {
+    console.log('Local environment detected. Skipping cleaning to preserve existing files.');
+  } else {
+    console.log('GitHub environment detected. Cleaning local folders for fresh build...');
+    cleanLocalFolders(); 
+  }
 
   console.log('Starting sync...');
   await downloadFolder(drive, FOLDER_ID, DEST_DIR);

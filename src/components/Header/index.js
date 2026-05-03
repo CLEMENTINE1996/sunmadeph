@@ -55,7 +55,7 @@ const Header = () => {
               href="/" 
               className={cx(
                 "mx-2 transition-colors",
-                isActive("/") ? "text-accent font-bold" : "hover:text-accent"
+                isActive("/") ? "text-accent dark:text-accentDark font-bold" : "hover:text-accent dark:hover:text-accentDark"
               )} 
               onClick={() => setClick(false)}
             >
@@ -66,29 +66,78 @@ const Header = () => {
               href="/products" 
               className={cx(
                 "mx-2 transition-colors",
-                isActive("/products") ? "text-accent font-bold" : "hover:text-accent"
+                isActive("/products") ? "text-accent dark:text-accentDark font-bold" : "hover:text-accent dark:hover:text-accentDark"
               )} 
               onClick={() => setClick(false)}
             >
               Products
             </Link>
 
+            {/* About Dropdown */}
+            <div className="relative group mx-2 py-2 cursor-pointer">
+              <div className={cx(
+                "flex items-center transition-colors",
+                isActive("/about") ? "text-accent dark:text-accentDark font-bold" : "hover:text-accent dark:hover:text-accentDark"
+              )}>
+                About
+                <svg 
+                  className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </div>
+
+              {/* Dropdown Menu */}
+              <div className={cx(
+                "absolute left-0 top-full mt-1 min-w-[160px] flex flex-col rounded-sm shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300",
+                mode === "light" ? "bg-white text-dark" : "bg-dark text-light border border-light/10"
+              )}>
+                <Link 
+                  href="/about" 
+                  className="px-4 py-2 hover:bg-accent/10 hover:text-accent dark:hover:text-accentDark transition-colors text-sm"
+                  onClick={() => setClick(false)}
+                >
+                  Company Overview
+                </Link>
+                <Link 
+                  href="/about/organization" 
+                  className="px-4 py-2 hover:bg-accent/10 hover:text-accent dark:hover:text-accentDark transition-colors text-sm"
+                  onClick={() => setClick(false)}
+                >
+                  Organizational Chart
+                </Link>
+                <Link 
+                  href="/about/branches" 
+                  className="px-4 py-2 hover:bg-accent/10 hover:text-accent dark:hover:text-accentDark transition-colors text-sm"
+                  onClick={() => setClick(false)}
+                >
+                  Branches
+                </Link>
+              </div>
+            </div>
+
             <Link 
-              href="/about" 
+              href="/careers" 
               className={cx(
                 "mx-2 transition-colors",
-                isActive("/about") ? "text-accent font-bold" : "hover:text-accent"
+                isActive("/careers") ? "text-accent dark:text-accentDark font-bold" : "hover:text-accent dark:hover:text-accentDark"
               )} 
               onClick={() => setClick(false)}
             >
-              About
+              Careers
             </Link>
 
             <Link 
               href="/contact" 
               className={cx(
                 "mx-2 transition-colors",
-                isActive("/contact") ? "text-accent font-bold" : "hover:text-accent"
+                isActive("/contact") ? "text-accent dark:text-accentDark font-bold" : "hover:text-accent dark:hover:text-accentDark"
               )} 
               onClick={() => setClick(false)}
             >
