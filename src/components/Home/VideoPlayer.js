@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { prefix } from "@/src/utils";
 import { Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal"
 
 const mockData = [
   { 
@@ -36,11 +37,11 @@ const VideoSlide = ({ url, isPlaying }) => {
   }, [isPlaying]);
 
   return (
-    <Slide duration={500} fraction={0.5} triggerOnce >
+    <Fade direction="up" duration={1000} triggerOnce>
     <div className="relative aspect-video w-full bg-black flex items-center justify-center rounded-lg overflow-hidden">
       <video ref={videoRef} src={url} muted playsInline controls className="w-full h-full object-contain" />
     </div>
-    </Slide>
+    </Fade>
   );
 };
 

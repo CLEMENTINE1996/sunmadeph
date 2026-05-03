@@ -3,14 +3,15 @@ import React from "react";
 import BlogLayoutOne from "../Blog/BlogLayoutOne";
 import BlogLayoutTwo from "../Blog/BlogLayoutTwo";
 import { Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 const FeaturedPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
   
   return (
-    <Slide triggerOnce >
-      <section className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col items-center justify-center">
-        <h2 className="w-full inline-block font-bold capitalize text-2xl md:text-4xl text-dark dark:text-light">
+    <section className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col items-start justify-center">
+      <Fade direction="up" duration={1200} triggerOnce cascade damping={0.1}>
+        <h2 className="w-full inline-block font-bold capitalize text-2xl md:text-4xl text-dark dark:text-light text-start">
           Featured Posts
         </h2>
 
@@ -30,8 +31,8 @@ const FeaturedPosts = ({ blogs }) => {
             <BlogLayoutTwo blog={sortedBlogs[3]} className="flex-1 !h-full" />
           </article>
         </div>
-      </section>
-    </Slide>
+      </Fade>
+    </section>
   );
 };
 
