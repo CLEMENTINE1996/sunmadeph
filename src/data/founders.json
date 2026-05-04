@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Cristofer Arcand",
+      "role": "Founder, CEO",
+      "image": "/sunmadeph/data/images/founder-1.jpg", 
+      "isPrimary": true, 
+      "bio": "Born from firsthand experience building and shaping local agriculture, we understand the journey of quality from soil to shelf."
+    },
+    {
+      "name": "Cooper Saris",
+      "role": "Business Expert",
+      "image": "/sunmadeph/data/images/founder-2.jpg",
+      "isPrimary": false
+    },
+    {
+      "name": "Marley Vaccaro",
+      "role": "Strategy Lead",
+      "image": "/sunmadeph/data/images/founder-3.jpg",
+      "isPrimary": false
+    },
+    {
+      "name": "Gustavo Dorwart",
+      "role": "Experience Designer",
+      "image": "/sunmadeph/data/images/founder-4.jpg", 
+      "isPrimary": false
+    }
+  ]

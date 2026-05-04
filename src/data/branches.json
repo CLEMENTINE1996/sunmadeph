@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "name": "Davao City",
+        "slug": "davao-city",
+        "location": "Davao City, Philippines",
+        "description": "Our Davao City branch is a hub of innovation and collaboration, where we strive to create impactful solutions for our clients. With a team of dedicated professionals, we are committed to delivering excellence in every project we undertake.",
+        "number_of_employees": 50,
+        "branch_manager": {
+            "name": "Roberto Silva",
+            "role": "Branch Manager",
+            "staff": [
+                { 
+                    "name": "Alice Reyes",
+                    "role": "Accountant",
+                    "staff": [
+                        { "name": "Emily Chen", "role": "Junior Accountant" },
+                        { "name": "Michael Lee", "role": "Payroll Specialist" }   
+                    ]
+                },
+                { "name": "Bob Tan", "role": "Sales Representative" },
+                { "name": "Charlie Cruz", "role": "Customer Support" }
+            ]
+        },
+        "services": [
+            "Financial Consulting",
+            "Sales and Marketing",
+            "Customer Support"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Cebu City",
+        "slug": "cebu-city",
+        "location": "Cebu City, Philippines",
+        "description": "Our Cebu City branch is a vibrant center of activity, where we focus on providing exceptional service and innovative solutions to meet the needs of our clients in this dynamic region.",
+        "number_of_employees": 40,
+        "branch_manager": {
+            "name": "Kevin Bacon",
+            "role": "Branch Manager",
+            "staff": [
+                { "name": "David Lim", "role": "Logistics Lead" },
+                { "name": "Eva Santos", "role": "Sales Associate" },
+                { "name": "Frank Villa", "role": "Technician" }
+            ]
+        },
+        "services": [
+            "Logistics Management",
+            "Sales and Marketing",
+            "Technical Support"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Manila",
+        "slug": "manila",
+        "location": "Manila, Philippines",
+        "description": "Our Manila branch is the heart of our operations, where we bring together a diverse team of professionals to drive innovation and deliver outstanding results for our clients across various industries.",
+        "number_of_employees": 60,
+        "branch_manager": {
+            "name": "Roberto Silva",
+            "role": "Branch Manager",
+            "staff": [
+                { "name": "Grace Tan", "role": "Operations Manager" },
+                { "name": "Henry Garcia", "role": "Marketing Specialist" },
+                { "name": "Ivy Santos", "role": "Human Resources Manager" }
+            ]
+        },
+        "services": [
+            "Operations Management",
+            "Marketing and Advertising",
+            "Human Resources"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Cagayan de Oro",
+        "slug": "cagayan-de-oro",
+        "location": "Cagayan de Oro, Philippines",
+        "description": "Our Cagayan de Oro branch is a thriving hub of creativity and collaboration, where we are dedicated to providing top-notch services and innovative solutions to our clients in this vibrant city.",
+        "number_of_employees": 35,
+        "branch_manager": {
+            "name": "Nice Lady",
+            "role": "Branch Manager",
+            "staff": [
+                { "name": "John Doe", "role": "Logistics Coordinator" },
+                { "name": "Jane Smith", "role": "Sales Executive" },
+                { "name": "Robert Johnson", "role": "Customer Service Representative" }
+            ]
+        },
+        "services": [
+            "Logistics Coordination",
+            "Sales and Marketing",
+            "Customer Service"
+         ]
+    }
+]
