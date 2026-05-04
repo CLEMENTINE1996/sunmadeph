@@ -3,65 +3,15 @@ import React from 'react'
 import MainLogo from "../../../public/main-logo.png"
 import Link from 'next/link';
 import { Fade } from "react-awesome-reveal";
+import journeyData from "@/src/data/journey.json";
+import foundersData from "@/src/data/founders.json";
+import awardsData from "@/src/data/awards.json";
+import statisticsData from "@/src/data/statistics.json";
 
 const AboutCoverSection = () => {
 
-  const JOURNEY_DATA = [
-    { 
-      year: "2014", 
-      title: "The Humble Mill",
-      description: "Started as a small family-owned mill with a vision to modernize local rice production." 
-    },
-    { 
-      year: "2018", 
-      title: "Fair Trade Expansion",
-      description: "Partnered with over 200 local farmers to ensure sustainable and fair-trade sourcing." 
-    },
-    { 
-      year: "2024", 
-      title: "Nationwide Reach",
-      description: "Expanded our distribution nationwide, bringing SunMade quality to every Filipino household." 
-    }
-  ];
-
-  const FOUNDERS_DATA = [
-    {
-      name: "Cristofer Arcand",
-      role: "Founder, CEO",
-      image: "https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-1.jpg",
-      isPrimary: true, 
-      bio: "Born from firsthand experience building and shaping local agriculture, we understand the journey of quality from soil to shelf.",
-      socials: { linkedin: "#", twitter: "#", instagram: "#" }
-    },
-    {
-      name: "Cooper Saris",
-      role: "Business Expert",
-      image: "https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-2.jpg",
-      isPrimary: false
-    },
-    {
-      name: "Marley Vaccaro",
-      role: "Strategy Lead",
-      image: "https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-3.jpg",
-      isPrimary: false
-    },
-    {
-      name: "Gustavo Dorwart",
-      role: "Experience Designer",
-      image: "https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-1.jpg", 
-      isPrimary: false
-    }
-  ];
-
-  const AWARDS_DATA = [
-    { title: "Best Local Produce 2023", org: "Agri-Business Council", icon: "🏅" },
-    { title: "Sustainable Packaging Award", org: "Eco-Friendly Asia", icon: "🌱" },
-    { title: "Top Quality Rice Brand", org: "Consumers Choice", icon: "🏆" },
-    { title: "Community Impact Award", org: "Rural Dev. Network", icon: "🤝" }
-  ];
-
-  const primaryFounder = FOUNDERS_DATA.find(f => f.isPrimary);
-  const teamMembers = FOUNDERS_DATA.filter(f => !f.isPrimary);
+  const primaryFounder = foundersData.find(f => f.isPrimary);
+  const teamMembers = foundersData.filter(f => !f.isPrimary);
 
   return (
     <section className='w-full flex flex-col items-center justify-center text-dark dark:text-light overflow-hidden'>
@@ -92,14 +42,9 @@ const AboutCoverSection = () => {
       </div>
 
       {/* Stats Section */}
-      <div className='w-full grid grid-cols-2 md:grid-cols-4 gap-8 py-12 bg-accent/5 dark:bg-accent/5 border-y border-dark/10 dark:border-light/10'>
+      <div className='w-full grid grid-cols-2 md:grid-cols-5 gap-8 py-12 bg-accent/5 dark:bg-accent/5 border-y border-dark/10 dark:border-light/10'>
         <Fade direction="up" duration={1200} triggerOnce cascade damping={0.1} className="w-full h-full flex justify-center">
-            {[
-            { label: "Years of Quality", value: "10+" },
-            { label: "Partner Farms", value: "500+" },
-            { label: "Rice Varieties", value: "12" },
-            { label: "Happy Families", value: "10k+" },
-            ].map((stat, index) => (
+            {statisticsData.map((stat, index) => (
             <div key={index} className='flex flex-col items-center group cursor-default'>
                 <span className='text-3xl font-bold text-accent dark:text-accentDark group-hover:scale-110 transition-transform duration-300'>{stat.value}</span>
                 <span className='text-sm font-semibold uppercase tracking-wider'>{stat.label}</span>
@@ -109,21 +54,19 @@ const AboutCoverSection = () => {
       </div>
 
       {/* Journey Section */}
-      <div className='w-full px-5 xs:px-10 lg:px-16 py-20 bg-dark/5 dark:bg-light/5'>
+      <div className='w-full mt-6 px-5 xs:px-10 lg:px-16 py-20 bg-dark/5 dark:bg-light/5'>
         <div className='max-w-4xl mx-auto'>
           <Fade direction="up" duration={1200} triggerOnce>
             <h3 className='text-3xl font-bold mb-16 text-center'>Our Journey</h3>
           </Fade>
           
           <div className='relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent before:to-transparent'>
-            {JOURNEY_DATA.map((item, idx) => (
+            {journeyData.map((item, idx) => (
                 <div key={idx} className='relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group'>
-   
                     <div className='flex items-center justify-center w-10 h-10 rounded-full border-2 border-accent bg-light dark:bg-dark text-accent font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10'>
                         {idx + 1}
                     </div>
 
-                    {/* The Animated Card */}
                     <div className='w-[calc(100%-4rem)] md:w-[45%]'>
                         <Fade direction={idx % 2 === 0 ? "left" : "right"} duration={1200} triggerOnce>
                             <div className='p-8 rounded-2xl border border-dark/10 dark:border-light/10 bg-light dark:bg-dark shadow-sm hover:shadow-md transition-shadow'>
@@ -139,8 +82,8 @@ const AboutCoverSection = () => {
         </div>
       </div>
 
-      {/* Founders Section */}
-      <div className='w-full px-5 xs:px-10 lg:px-16 py-24 max-w-7xl mx-auto'>
+      {/* Founders Section - Now using the local synced images */}
+      <div className='w-full mt-6 max-w-7xl mx-auto'>
         <Fade direction="up" duration={1200} triggerOnce cascade damping={0.1}>
             <div className='w-full flex flex-col md:flex-row bg-[#F8F9FA] dark:bg-dark/40 overflow-hidden rounded-sm border border-dark/5 dark:border-light/5 mb-8'>
                 <div className='w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-between'>
@@ -156,7 +99,8 @@ const AboutCoverSection = () => {
                         <div className='flex flex-col'><span className='font-bold text-2xl'>500+</span><span className='text-[10px] uppercase font-bold opacity-50'>Farmers</span></div>
                     </div>
                 </div>
-                <div className='w-full md:w-1/2 relative min-h-[400px]'>
+                <div className='w-full md:w-1/2 relative min-h-[600px]'>
+                    {/* Using standard img tag for easier dynamic path handling */}
                     <img src={primaryFounder?.image} alt={primaryFounder?.name} className='absolute inset-0 w-full h-full object-cover object-top' />
                     <div className='absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/80 to-transparent text-white'>
                         <h4 className='text-xl font-bold'>{primaryFounder?.name}</h4>
@@ -182,11 +126,11 @@ const AboutCoverSection = () => {
       </div>
 
       {/* Awards Section */}
-      <div className='w-full px-5 xs:px-10 lg:px-16 py-20 bg-dark/5 dark:bg-light/5'>
+      <div className='w-full mt-6 px-5 xs:px-10 lg:px-16 py-20 bg-dark/5 dark:bg-light/5'>
         <Fade direction="up" duration={1200} triggerOnce cascade damping={0.1}>
             <h3 className='text-3xl font-bold mb-12 text-center'>Recognition & Excellence</h3>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-6'>
-                {AWARDS_DATA.map((award, i) => (
+                {awardsData.map((award, i) => (
                     <div key={i} className='flex flex-col items-center p-8 bg-light dark:bg-dark rounded-xl text-center border border-dark/10 dark:border-light/10 group shadow-sm'>
                         <div className='mb-4 text-4xl group-hover:rotate-12 transition-transform duration-300'>{award.icon}</div>
                         <h5 className='font-bold text-sm md:text-base'>{award.title}</h5>
@@ -197,23 +141,8 @@ const AboutCoverSection = () => {
         </Fade>
       </div>
 
-      {/* Quality Process Section */}
-      <div className='w-full px-5 xs:px-10 lg:px-16 py-24 text-center'>
-        <Fade direction="up" duration={1200} triggerOnce cascade damping={0.1}>
-            <h3 className='text-3xl font-bold mb-4'>The SunMade Standard</h3>
-            <p className='max-w-2xl mx-auto mb-12 opacity-80 italic'>Meticulous steps to ensure peak freshness.</p>
-            <div className='flex flex-wrap justify-center gap-6'>
-                {['Harvesting', 'Drying', 'Hulling', 'Polishing', 'Grading'].map((step, idx) => (
-                    <div key={idx} className='px-8 py-4 border-2 border-accent/20 rounded-full font-bold hover:bg-accent hover:text-light transition-all'>
-                        {idx + 1}. {step}
-                    </div>
-                ))}
-            </div>
-        </Fade>
-      </div>
-
       {/* Experience Section */}
-      <div className='w-full px-5 py-24 flex flex-col items-center justify-center bg-accent/10 dark:bg-accent/5 text-center'>
+      <div className='w-full mt-6 px-5 py-24 flex flex-col items-center justify-center bg-accent/10 dark:bg-accent/5 text-center'>
         <Fade direction="up" duration={1200} triggerOnce>
             <div className='max-w-4xl p-12 md:p-20 rounded-2xl bg-light dark:bg-dark shadow-xl border border-accent/10'>
                 <h3 className='text-accent dark:text-accentDark text-4xl md:text-5xl font-bold mb-8'>
