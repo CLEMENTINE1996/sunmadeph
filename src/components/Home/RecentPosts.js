@@ -9,7 +9,7 @@ const RecentPosts = ({ blogs }) => {
   
   return (
     /* Changed items-start to items-center to allow full-width distribution */
-    <section className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col items-center justify-center">
+    <section className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 sxl:px-32 flex flex-col items-center justify-center">
       
       {/* 1. Wrap in a div that is explicitly w-full */}
       <div className="w-full">

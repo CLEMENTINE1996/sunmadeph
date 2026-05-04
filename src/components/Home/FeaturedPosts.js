@@ -9,7 +9,7 @@ const FeaturedPosts = ({ blogs }) => {
   const sortedBlogs = sortBlogs(blogs);
   
   return (
-    <section className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 md:px-24 sxl:px-32 flex flex-col items-start justify-center">
+    <section className="w-full mt-16 sm:mt-24 md:mt-32 px-5 sm:px-10 sxl:px-32 flex flex-col items-start justify-center">
       <Fade direction="up" duration={1200} triggerOnce cascade damping={0.1}>
         <h2 className="w-full inline-block font-bold capitalize text-2xl md:text-4xl text-dark dark:text-light text-start">
           Featured Posts

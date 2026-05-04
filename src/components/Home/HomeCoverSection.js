@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 import Tag from '../Elements/Tag';
-import { Fade } from "react-awesome-reveal"; // Import Fade
+import { Fade } from "react-awesome-reveal";
 
 const HomeCoverSection = ({blogs}) => {
     const sortedBlogs = sortBlogs(blogs);
@@ -11,7 +11,7 @@ const HomeCoverSection = ({blogs}) => {
 
   return (
     <div className='w-full inline-block'>
-        <article className='flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[50vh] sm:h-[60vh] group overflow-hidden rounded-3xl shadow-2xl'>
+        <article className='flex flex-col items-start justify-end mx-5 sm:mx-10 relative h-[50vh] sm:h-[60vh] group overflow-hidden rounded-sm shadow-2xl'>
             
             <div className='absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent z-0' />
             

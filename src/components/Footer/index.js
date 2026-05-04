@@ -5,6 +5,7 @@ import Link from "next/link";
 import siteMetadata from "@/src/utils/siteMetaData";
 import profileImg from "@/public/profile-img.png"
 import Image from "next/image"
+import { Fade } from "react-awesome-reveal";
 
 // Helper for vibrant social circles
 const SocialLink = ({ href, ariaLabel, children }) => (
@@ -35,9 +36,9 @@ const InstagramIcon = ({ className }) => (
 
 const Footer = () => {
   return (
-    <footer className="mt-16 rounded-2xl mb-8 flex flex-col items-center overflow-hidden relative
+    <footer className="mt-16 rounded-sm mb-8 flex flex-col items-center overflow-hidden relative
       bg-gradient-to-br from-accent to-accentDark dark:from-accentDark dark:to-black
-      text-light shadow-2xl border border-white/10">
+      text-light">
       
       {/* Decorative Glow Element */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-light/50 to-transparent" />
@@ -45,61 +46,63 @@ const Footer = () => {
       {/* Profile/Logo Image with Glow */}
       <div className="relative mt-12 group">
         <div className="absolute inset-0 bg-light rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity" />
-        <Image 
-          src={profileImg} 
-          alt="Sunmade Rice logo" 
-          className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-light/20 object-cover shadow-inner" 
-          sizes="20vw" 
-        />
+        <Fade direction="up" duration={1200} triggerOnce cascade damping={0.2}>
+          <Image 
+            src={profileImg} 
+            alt="Sunmade Rice logo" 
+            className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-light/20 object-cover shadow-inner" 
+            sizes="20vw" 
+          />
+        </Fade>
       </div>
 
-      <h3 className="mt-8 font-bold text-center capitalize text-2xl sm:text-4xl lg:text-5xl px-6 max-w-4xl tracking-tight leading-tight">
-        SunMade Rice. <span className="text-light/80">A Taste of Excellence in Every Grain.</span>
-      </h3>
-
-      <p className="mt-6 px-6 text-center w-full sm:w-3/5 font-light text-base sm:text-lg leading-relaxed text-light/90">
-        A Proudly Filipino company. Producing premium quality <span className="font-semibold text-light">100% homegrown</span> Philippine rice since 2009.
-      </p>
-
-      {/* Vibrant Contact Section */}
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-16 mt-12 py-6 px-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
-        <div className="flex items-center gap-3 group cursor-default">
-          <div className="p-2 bg-light/10 rounded-lg group-hover:bg-light group-hover:text-accent transition-colors">
-            <MapPin size={22} />
-          </div>
-          <span className="text-sm sm:text-base">{siteMetadata.address}</span>
-        </div>
-        
-        <div className="flex items-center gap-3 group">
-          <div className="p-2 bg-light/10 rounded-lg group-hover:bg-light group-hover:text-accent transition-colors">
-            <Phone size={22} />
-          </div>
-          <a href={`tel:${siteMetadata.phone.replace(/\s/g, '')}`} className="text-sm sm:text-base hover:text-light/70 transition-colors font-bold">
-            {siteMetadata.phone}
-          </a>
-        </div>
-      </div>
-
-      {/* Social Media Section */}
-      <div className="flex items-center gap-5 mt-10">
-        <SocialLink href={siteMetadata.facebook} ariaLabel="Follow on Facebook">
-          <FacebookIcon />
-        </SocialLink>
-        <SocialLink href={siteMetadata.instagram} ariaLabel="Follow on Instagram">
-          <InstagramIcon />
-        </SocialLink>
-      </div>
-
-      {/* Bottom Footer Area */}
-      <div className="w-full mt-16 md:mt-24 relative font-medium border-t border-white/10 py-8 px-8 flex flex-col md:flex-row items-center justify-between text-sm bg-black/10">
-        <span className="text-center opacity-80">
-          &copy;{new Date().getFullYear()} {siteMetadata.author}. All rights reserved.
-        </span>
       
+        <h3 className="mt-8 font-bold text-center capitalize text-2xl sm:text-4xl lg:text-5xl px-6 max-w-4xl tracking-tight leading-tight">
+          <Fade direction="up" duration={1200} triggerOnce cascade damping={0.2}>SunMade Rice. <span className="text-light/80">A Taste of Excellence in Every Grain.</span></Fade>
+        </h3>
 
-        <div className="flex items-center gap-1 opacity-80">
-          Made with <span className="text-red-500 animate-pulse">&hearts;</span>
+        <div className="mt-6 px-6 text-center w-full sm:w-3/5 font-light text-base sm:text-lg leading-relaxed text-light/90">
+          <Fade direction="up" duration={1200} triggerOnce cascade damping={0.2}><p>A Proudly Filipino company. Producing premium quality <span className="font-semibold text-light">100% homegrown</span> Philippine rice since 2009.</p></Fade>
         </div>
+
+      <Fade direction="up" duration={1200} triggerOnce cascade damping={0.2}>
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-16 mt-12 py-6 px-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div className="flex items-center gap-3 group cursor-default">
+            <div className="p-2 bg-light/10 rounded-lg group-hover:bg-light group-hover:text-accent transition-colors">
+              <MapPin size={22} />
+            </div>
+            <span className="text-sm sm:text-base">{siteMetadata.address}</span>
+          </div>
+          
+          <div className="flex items-center gap-3 group">
+            <div className="p-2 bg-light/10 rounded-lg group-hover:bg-light group-hover:text-accent transition-colors">
+              <Phone size={22} />
+            </div>
+            <a href={`tel:${siteMetadata.phone.replace(/\s/g, '')}`} className="text-sm sm:text-base hover:text-light/70 transition-colors font-bold">
+              {siteMetadata.phone}
+            </a>
+          </div>
+        </div>
+      </Fade>
+
+      <Fade direction="up" duration={1200} triggerOnce cascade damping={0.2}>
+        <div className="flex items-center gap-5 mt-5">
+          <SocialLink href={siteMetadata.facebook} ariaLabel="Follow on Facebook">
+            <FacebookIcon />
+          </SocialLink>
+          <SocialLink href={siteMetadata.instagram} ariaLabel="Follow on Instagram">
+            <InstagramIcon />
+          </SocialLink>
+        </div>
+      </Fade>
+
+      <div className="w-full mt-16 md:mt-10 relative font-medium border-t border-white/10 py-8 px-8 flex flex-col md:flex-row items-center justify-between text-sm bg-black/10">
+        <Fade direction="up" duration={1200} triggerOnce cascade damping={0.2}>
+          <span className="text-center opacity-80">
+            &copy;{new Date().getFullYear()} {siteMetadata.author}. All rights reserved.
+          </span>
+        </Fade>
+
       </div>
     </footer>
   );

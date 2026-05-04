@@ -9,11 +9,11 @@ import { cx } from "@/src/utils";
 import { usePathname } from "next/navigation"; 
 
 const FacebookIcon = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
 );
 
 const InstagramIcon = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
 );
 
 const Header = () => {
@@ -119,6 +119,13 @@ const Header = () => {
                 >
                   Branches
                 </Link>
+                <Link 
+                  href="/about/partners" 
+                  className="px-4 py-2 hover:bg-accent/10 hover:text-accent dark:hover:text-accentDark transition-colors text-sm"
+                  onClick={() => setClick(false)}
+                >
+                  Partners
+                </Link>
               </div>
             </div>
 
@@ -156,8 +163,8 @@ const Header = () => {
 
         {/* Desktop Social Icons */}
         <div className="hidden sm:flex items-center gap-4">
-            <a href={siteMetadata.facebook} target="_blank" className="hover:scale-125 transition-all"><FacebookIcon /></a>
-            <a href={siteMetadata.instagram} target="_blank" className="hover:scale-125 transition-all"><InstagramIcon /></a>
+            <a href={siteMetadata.facebook} target="_blank" className="text-dark dark:text-light hover:scale-125 transition-all"><FacebookIcon /></a>
+            <a href={siteMetadata.instagram} target="_blank" className="text-dark dark:text-light hover:scale-125 transition-all"><InstagramIcon /></a>
         </div>
     </header>
   )
