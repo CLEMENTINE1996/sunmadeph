@@ -34,7 +34,7 @@ const RecentPosts = ({ blogs }) => {
         {sortedBlogs.slice(4, 10).map((blog, index) => (
           <Fade key={index} direction="up" triggerOnce delay={index * 100} duration={1000}>
             <article className="col-span-1 relative">
-              <BlogLayoutThree blog={blog} />
+              <BlogLayoutThree blog={blog} isFeatured={false} />
             </article>
           </Fade>
         ))}
