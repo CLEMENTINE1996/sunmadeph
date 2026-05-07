@@ -6,8 +6,8 @@
         "specifications": "100% Whole Grain, Rich in Fiber, Locally Sourced",
         "price": "₱350",
         "images": [
-            "/brown-rice.jpg",
-            "/brown-rice-2.jpg"
+            "/sunmadeph/data/images/products/brown-rice.jpg",
+            "/sunmadeph/data/images/products/brown-rice-2.jpg"
         ],
         "formLink": "https://docs.google.com/forms/d/e/1FAIpQLSe_HJ2QjKTCqWRXs2XegM9SXTgJl3_MkyU6nF0TyRZUp_t-yQ/viewform"
     },
@@ -18,8 +18,8 @@
         "specifications": "Natural Bran Layer, Locally Farmed, Freshly Milled",
         "price": "₱150",
         "images": [
-            "/brown-rice.jpg",
-            "/brown-rice-2.jpg"
+            "/sunmadeph/data/images/products/brown-rice.jpg",
+            "/sunmadeph/data/images/products/brown-rice-2.jpg"
         ],
         "formLink": "https://docs.google.com/forms/d/e/1FAIpQLSe_HJ2QjKTCqWRXs2XegM9SXTgJl3_MkyU6nF0TyRZUp_t-yQ/viewform"
     },
@@ -30,8 +30,8 @@
         "specifications": "High Antioxidant Content, 1kg Trial Pack, Farm Fresh",
         "price": "₱80",
         "images": [
-            "/brown-rice.jpg",
-            "/brown-rice-2.jpg"
+            "/sunmadeph/data/images/products/brown-rice.jpg",
+            "/sunmadeph/data/images/products/brown-rice-2.jpg"
         ],
         "formLink": "https://docs.google.com/forms/d/e/1FAIpQLSe_HJ2QjKTCqWRXs2XegM9SXTgJl3_MkyU6nF0TyRZUp_t-yQ/viewform"
     },
@@ -42,7 +42,7 @@
         "specifications": "Double Polished, Soft Texture, Premium White Rice",
         "price": "₱120",
         "images": [
-            "/white-rice.jpg"
+            "/sunmadeph/data/images/products/white-rice.jpg"
         ],
         "formLink": "https://docs.google.com/forms/d/e/1FAIpQLSe_HJ2QjKTCqWRXs2XegM9SXTgJl3_MkyU6nF0TyRZUp_t-yQ/viewform"
     },
@@ -53,7 +53,7 @@
         "specifications": "Standard Mill, Daily Staple, Value Family Pack",
         "price": "₱280",
         "images": [
-            "/white-rice.jpg"
+            "/sunmadeph/data/images/products/white-rice.jpg"
         ],
         "formLink": "https://docs.google.com/forms/d/e/1FAIpQLSe_HJ2QjKTCqWRXs2XegM9SXTgJl3_MkyU6nF0TyRZUp_t-yQ/viewform"
     }

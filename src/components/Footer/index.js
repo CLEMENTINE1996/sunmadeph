@@ -42,7 +42,7 @@ const SocialLink = ({ href, ariaLabel, children }) => (
 
 const Footer = () => {
   return (
-    <footer className="mt-18 mb-4 relative overflow-hidden sm:mt-24 md:mt-32 px-5 sm:px-10 sxl:px-32 bg-gradient-to-br from-accent to-accentDark dark:from-accentDark dark:to-black
+    <footer className="mt-18 mb-4 relative overflow-hidden sm:mt-24 md:mt-22 px-5 sm:px-10 sxl:px-32 bg-gradient-to-br from-accent to-accentDark dark:from-accentDark dark:to-black
       text-light rounded-sm">
       {/* Decorative Glow Elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-white/20" />
